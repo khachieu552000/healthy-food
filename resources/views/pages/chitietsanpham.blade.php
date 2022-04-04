@@ -18,7 +18,7 @@
                         <img src="{{ asset($chitiet->hinh_anh) }}" alt="">
                     </div>
                     <div class="col-sm-7">
-                        <div class="single-item-body">
+                        <div class="single-item-body border">
                             <p class="single-item-title"><h3>{{ $chitiet->ten_san_pham }}</h3></p>
                             <p>{!! $chitiet->ghi_chu !!}</p>
                         </div>
@@ -40,7 +40,8 @@
                         </div>
 
                         <div class="single-item-options">
-                            <a class="beta-btn primary" href="{{ route('pages.muangay', ['muc_slug'=>$chitiet->danh_muc->slug,'danh_muc_id'=>$chitiet->danh_muc_id,'sp_slug'=>$chitiet->slug,'id'=>$chitiet->id]) }}">Mua ngay</a>
+                            <a class="beta-btn primary" onclick="addCart({{ $chitiet->id }})" data-id="{{ $chitiet->id }}">Thêm giỏ hàng</a>
+                            <a class="beta-btn primary ml20" href="{{ route('pages.muangay', ['muc_slug'=>$chitiet->danh_muc->slug,'danh_muc_id'=>$chitiet->danh_muc_id,'sp_slug'=>$chitiet->slug,'id'=>$chitiet->id]) }}">Mua ngay</a>
                             <div class="clearfix"></div>
                         </div>
                 </div>

@@ -96,6 +96,10 @@ textarea:focus,input:focus,select:focus,a:focus {
 outline:none;
 }
 
+.border{
+    border-bottom: 1px solid #ccc;
+}
+
 h1,h2,h3,h4,h5,h6,td,caption {
 font-weight:400
 }
@@ -4882,11 +4886,11 @@ border:none;}
     font-size: 17px;
 }
 
-.nav-tabs>li{
+/* .nav-tabs>li{
     background-color: var(--background-color);
-    border: 1px solid #ccc;
 
-}
+
+} */
 
 .nav-tabs>li>a:hover{
     background-color: var(--hover-color);
