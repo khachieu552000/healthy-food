@@ -10,26 +10,16 @@
             <h1 class="page-header">Danh mục</h1>
         </div>
     </div>
-
     @if (count($errors)>0)
-    <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
+        <div class="alert alert-danger">
             @foreach ($errors->all() as $err)
-            {{ $err }} <br>
+                {{ $err }}
             @endforeach
-    </div>
-
+        </div>
     @endif
     @if (session('thongbao'))
-    <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
-    {{ session('thongbao') }}
-    </div>
-
+        <div class="alert alert-success">{{ session('thongbao') }}</div>
     @endif
-
     <div class="row">
         <div class="col-lg-12">
             <p>
@@ -38,7 +28,6 @@
             <p>
         </div>
     </div>
-
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
@@ -52,8 +41,8 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th style="text-align: center;">Tên danh mục</th>
-                                    <th style="text-align: center;">Chức năng</th>
+                                    <th>Tên danh mục</th>
+                                    <th>Chức năng</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,11 +53,9 @@
                                 @foreach ($danhmuc as $item)
 
                                         <tr class="odd gradeX">
-                                            <td class="" style="width: 80px; text-align: center;">{{ $i++ }}
-                                            </td>
-                                            <td class="" style="text-align: center; font-weight: 600; color: rgb(231, 38, 38)">
-                                                {{ $item->ten_danh_muc }}</td>
-                                            <td class="center" style="text-align: center;">
+                                            <td>{{ $i++ }}</td>
+                                            <td>{{ $item->ten_danh_muc }}</td>
+                                            <td>
                                                 <a class="btn btn-success btn-xs btn-edit" href="#"
                                                     data-url="{{ route('Danhmuc.getSua', ['id' => $item->id]) }}"
                                                     ​><i class="fa fa-edit"></i> Sửa</a>

@@ -19,34 +19,27 @@
     </div>
 @endif
     <div class="panel panel-default">
-        <div class="panel-heading">
-            Sửa nhân viên
-        </div>
+        <div class="panel-heading"> Sửa nhân viên</div>
         <div class="panel-body">
             <form action="{{ route('admin.nhanvien.postSua', ['id' => $user->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
-
                 <div class="form-group">
                     <label for="ho_ten">Họ tên</label>
-                    <input type="text" class="form-control" id="ho_ten" placeholder="Họ và tên" name="ho_ten" value="{{ $user->nhan_vien->ho_ten }}"
-                        autocomplete="off" />
+                    <input type="text" class="form-control" id="ho_ten" placeholder="Họ và tên" name="ho_ten" value="{{ $user->nhan_vien->ho_ten }}" autocomplete="off" />
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="{{ $user->email }}"
-                        autocomplete="off" disabled />
+                    <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="{{ $user->email }}" autocomplete="off" disabled />
                 </div>
 
                 <div class="form-group">
                     <label for="dien_thoai">Điện thoại</label>
-                    <input type="text" class="form-control" id="dien_thoai" placeholder="Số điện thoại" name="dien_thoai" value="{{ $user->nhan_vien->dien_thoai }}"
-                        autocomplete="off" />
+                    <input type="text" class="form-control" id="dien_thoai" placeholder="Số điện thoại" name="dien_thoai" value="{{ $user->nhan_vien->dien_thoai }}" autocomplete="off" />
                 </div>
 
                 <div class="form-group" style="width: 40%;">
                     <label for="ngay_sinh">Ngày sinh</label>
-                    <input type="date" class="form-control" id="ngay_sinh" name="ngay_sinh" value="{{ $user->nhan_vien->ngay_sinh }}"
-                        autocomplete="off" />
+                    <input type="date" class="form-control" id="ngay_sinh" name="ngay_sinh" value="{{ $user->nhan_vien->ngay_sinh }}" autocomplete="off" />
                 </div>
 
                 <div class="form-group" style="width: 40%;">
@@ -61,8 +54,7 @@
 
                 <div class="form-group">
                     <label for="dia_chi">Địa chỉ</label>
-                    <input type="text" class="form-control" id="dia_chi" name="dia_chi" value="{{ $user->nhan_vien->dia_chi }}"
-                        placeholder="Địa chỉ" />
+                    <input type="text" class="form-control" id="dia_chi" name="dia_chi" value="{{ $user->nhan_vien->dia_chi }}" placeholder="Địa chỉ" />
                 </div>
 
                 <button type="submit" class="btn btn-primary mb-2">Sửa</button>
@@ -79,8 +71,7 @@
                 @csrf
                 <label for="exampleFormControlInput1">Đặt lại mật khẩu về mặc định là: 123456</label>
                 <br>
-                <button type="submit" class="btn btn-primary mb-2" onclick="return ConfirmResetPass()">Đặt lại mật
-                    khẩu</button>
+                <button type="submit" class="btn btn-primary mb-2" onclick="return ConfirmResetPass()">Đặt lại mật khẩu</button>
             </form>
         </div>
     </div>

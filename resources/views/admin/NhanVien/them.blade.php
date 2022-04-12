@@ -19,33 +19,27 @@
         </div>
     @endif
     <div class="panel panel-default">
-        <div class="panel-heading">
-            Thêm nhân viên
-        </div>
+        <div class="panel-heading"> Thêm nhân viên</div>
         <div class="panel-body">
             <form action="" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="ho_ten">Họ tên</label>
-                    <input type="text" class="form-control" id="ho_ten" placeholder="Họ và tên" name="ho_ten" value=""
-                        autocomplete="off" />
+                    <input type="text" class="form-control" id="ho_ten" placeholder="Họ và tên" name="ho_ten" autocomplete="off" />
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email" name="email" value=""
-                        autocomplete="off" />
+                    <input type="email" class="form-control" id="email" placeholder="Email" name="email" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
                     <label for="dien_thoai">Điện thoại</label>
-                    <input type="text" class="form-control" id="dien_thoai" placeholder="Số điện thoại" name="dien_thoai" value=""
-                        autocomplete="off" />
+                    <input type="text" class="form-control" id="dien_thoai" placeholder="Số điện thoại" name="dien_thoai" autocomplete="off" />
                 </div>
 
                 <div class="form-group" style="width: 40%;">
                     <label for="ngay_sinh">Ngày sinh</label>
-                    <input type="date" class="form-control" id="ngay_sinh" name="ngay_sinh" value=""
-                        autocomplete="off" />
+                    <input type="date" class="form-control" id="ngay_sinh" name="ngay_sinh" autocomplete="off" />
                 </div>
 
                 <div class="form-group" style="width: 40%;">
@@ -64,13 +58,11 @@
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Mật khẩu</label>
-                    <input type="password" class="form-control" id="password" placeholder="Mật khẩu" name="password"
-                        value="" required autocomplete="off" />
+                    <input type="password" class="form-control" id="password" placeholder="Mật khẩu" name="password" required autocomplete="off" />
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Xác nhận mật khẩu</label>
-                    <input type="password" class="form-control" id="confirm_password" placeholder="Xác nhận mật khẩu"
-                        name="passwordAgain" value="" required>
+                    <input type="password" class="form-control" id="confirm_password" placeholder="Xác nhận mật khẩu" name="passwordAgain" required>
                 </div>
 
 

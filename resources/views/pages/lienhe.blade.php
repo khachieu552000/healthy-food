@@ -20,18 +20,31 @@
             <div class="col-sm-8">
                 <h4>ĐỂ LẠI LỜI NHẮN</h4>
                 <div class="space20">&nbsp;</div>
-                <form action="#" method="post" class="contact-form">
+                @if (count($errors)>0)
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $err)
+                        {{ $err }}
+                        @endforeach
+                    </div>
+                @endif
+                @if (session('thongbao'))
+                    <div class="alert alert-success">
+                        {{ session('thongbao') }}
+                    </div>
+                @endif
+                <form action="{{ route('pages.postLienhe') }}" method="post" class="contact-form">
+                    @csrf
                     <div class="form-block">
-                        <input class="form-control" name="your-name" type="text" placeholder="Họ tên">
+                        <input class="form-control" name="ho_ten" type="text" placeholder="Họ tên">
                     </div>
                     <div class="form-block">
-                        <input class="form-control" name="your-email" type="email" placeholder="Email">
+                        <input class="form-control" name="email" type="email" placeholder="Email">
                     </div>
                     <div class="form-block">
-                        <input class="form-control" name="your-subject" type="text" placeholder="Số điện thoại">
+                        <input class="form-control" name="dien_thoai" type="text" placeholder="Số điện thoại">
                     </div>
                     <div class="form-block">
-                        <textarea class="form-control" rows="10" name="your-message" placeholder="Nội dung"></textarea>
+                        <textarea class="form-control" rows="10" name="noi_dung" placeholder="Nội dung"></textarea>
                     </div>
                     <div class="form-block">
                         <button type="submit" class="beta-btn primary">Gửi ngay</button>

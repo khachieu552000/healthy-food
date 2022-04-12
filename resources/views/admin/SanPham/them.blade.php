@@ -33,9 +33,6 @@
                                 @csrf
                                 <div id="them">
                                     <div class="form-group">
-                                        <label for="danh_muc" style="color: red">Nhập sản phẩm 1</label>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="danh_muc">Danh mục</label>
                                         <select class="form-control" style="width: 30%" name="danh_muc"
                                             id="danh_muc">
@@ -61,13 +58,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="don_gia_nhap">Đơn giá nhập (VNĐ)</label>
-                                        <input type="number" style="width: 30%" class="form-control" id="don_gia_nhap"
-                                            name="don_gia_nhap" placeholder="Nhập giá sản phẩm" value="0">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="don_gia_ban">Đơn giá bán (VNĐ)</label>
+                                        <label for="don_gia_ban">Giá bán (VNĐ)</label>
                                         <input type="number" style="width: 30%" class="form-control" id="don_gia_ban"
                                             name="don_gia_ban" placeholder="Nhập giá sản phẩm" value="0">
                                     </div>
@@ -84,9 +75,13 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="ghi_chu">Ghi chú</label>
-                                        <textarea class="form-control ckeditor" id="demo" name="ghi_chu" placeholder=""
-                                            rows="5"></textarea>
+                                        <label for="thuoc_tinh">Thuộc tính</label>
+                                        <textarea class="form-control ckeditor" id="demo" name="thuoc_tinh" rows="5"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mo_ta">Mô tả</label>
+                                        <textarea class="form-control ckeditor" id="demo" name="mo_ta" rows="5"></textarea>
                                     </div>
                                 </div>
                                 <a type="button" href="{{ route('admin.sanpham.index') }}" class="btn btn-success" value="quay lại">Quay lại</a>

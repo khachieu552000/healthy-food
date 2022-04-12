@@ -5,6 +5,7 @@ use App\Http\Controllers\DanhMucController;
 use App\Http\Controllers\GioHangController;
 use App\Http\Controllers\HoaDonController;
 use App\Http\Controllers\KhacHangController;
+use App\Http\Controllers\LienHeController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SanPhamController;
@@ -51,11 +52,8 @@ Route::prefix('san-pham')->group(function () {
     Route::get('xoa/{id}', [SanPhamController::class, 'getXoa'])->name('admin.sanpham.getXoa');
 });
 
-Route::prefix('slide')->group(function () {
-    Route::get('/', [SlideController::class, 'index'])->name('admin.slide.index');
-    Route::get('them', [SlideController::class, 'getThem'])->name('admin.slide.getThem');
-    Route::post('them', [SlideController::class, 'postThem'])->name('admin.slide.postThem');
-    Route::get('xoa/{id}', [SlideController::class, 'getXoa'])->name('admin.slide.getXoa');
+Route::prefix('lien-he')->group(function () {
+    Route::get('/', [LienHeController::class, 'index'])->name('admin.lienhe.index');
 });
 
 Route::prefix('khach-hang')->group(function () {
@@ -118,6 +116,7 @@ Route::prefix('thanh-toan')->middleware('payment')->group(function () {
     Route::get('thong-bao', [GioHangController::class, 'thongbao'])->name('pages.thongbao');
     Route::get('tim-kiem', [PagesController::class, 'timkiem'])->name('pages.timkiem');
     Route::get('lien-he', [PagesController::class, 'getLienhe'])->name('pages.lienhe');
+    Route::post('lien-he', [PagesController::class, 'postLienhe'])->name('pages.postLienhe');
     Route::get('gioi-thieu', [PagesController::class, 'getGioithieu'])->name('pages.gioithieu');
     Route::get('thong-tin', [TaiKhoanController::class, 'getThongtinUser'])->name('pages.getThongtinUser');
     Route::post('thong-tin', [TaiKhoanController::class, 'postThongtinUser'])->name('pages.postThongtinUser');

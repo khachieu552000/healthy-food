@@ -33,8 +33,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Danh sách tài khoản nhân viên
-                </div>
+                    Danh sách tài khoản nhân viên</div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -59,19 +58,18 @@
                                     @foreach ($user as $us)
                                     @if($us->nhan_vien)
                                         <tr class="odd gradeX">
-                                            <td class="" style="width: 80px; text-align: center;">{{ $i++ }}
-                                            </td>
-                                            <td class="">{{ $us->nhan_vien->ho_ten }}</td>
-                                            <td class="" style="">{{ $us->email }}</td>
-                                            <td class="" style="">{{ date('d/m/Y', strtotime($us->nhan_vien->ngay_sinh)) }}</td>
-                                            <td class="" style="">{{ $us->nhan_vien->gioi_tinh }}</td>
-                                            <td class="" style="">{{ $us->nhan_vien->dien_thoai }}</td>
-                                            <td class="" style="">{{ $us->nhan_vien->dia_chi }}</td>
-                                            <td class="" style="">
+                                            <td>{{ $i++ }}</td>
+                                            <td>{{ $us->nhan_vien->ho_ten }}</td>
+                                            <td>{{ $us->email }}</td>
+                                            <td>{{ date('d/m/Y', strtotime($us->nhan_vien->ngay_sinh)) }}</td>
+                                            <td>{{ $us->nhan_vien->gioi_tinh }}</td>
+                                            <td>{{ $us->nhan_vien->dien_thoai }}</td>
+                                            <td>{{ $us->nhan_vien->dia_chi }}</td>
+                                            <td>
                                                 <a class="btn btn-warning btn-xs"
                                                     href="{{ route('admin.nhanvien.getSua', ['id' => $us->id]) }}" ​><i class="fa fa-edit"></i> Sửa</a>
                                                 <a class="btn btn-danger btn-xs"
-                                                    href="{{ route('admin.nhanvien.getXoa', ['id' => $us->id]) }}" ​><i class="fa fa-edit"></i> Xoá</a>
+                                                    href="{{ route('admin.nhanvien.getXoa', ['id' => $us->id]) }}" onclick="return ConfirmDelete()" ​><i class="fa fa-edit"></i> Xoá</a>
                                             </td>
                                         </tr>
                                     @endif

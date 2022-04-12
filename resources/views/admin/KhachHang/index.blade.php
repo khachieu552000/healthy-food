@@ -37,12 +37,12 @@
                                     @endphp
                                     @foreach ($khachhang as $kh)
                                             <tr class="odd gradeX">
-                                                <td class="" style="width: 80px; text-align: center;">{{ $i++ }}</td>
-                                                <td class="">{{ $kh->ho_ten }}</td>
-                                                <td class="" style="">{{ $kh->users ? $kh->users->email:'' }}</td>
-                                                <td class="" style="">{{ $kh->dien_thoai }}</td>
-                                                <td class="" style="">{{ date('d/m/Y', strtotime($kh->ngay_sinh )) }}</td>
-                                                <td class="" style="">{{ $kh->dia_chi }}</td>
+                                                <td>{{ $i++ }}</td>
+                                                <td>{{ $kh->ho_ten }}</td>
+                                                <td>{{ $kh->users ? $kh->users->email:'' }}</td>
+                                                <td>{{ $kh->dien_thoai }}</td>
+                                                <td>{{ date('d/m/Y', strtotime($kh->ngay_sinh )) }}</td>
+                                                <td>{{ $kh->dia_chi }}</td>
                                             </tr>
                                     @endforeach
                                 @endif

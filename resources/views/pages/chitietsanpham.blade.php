@@ -20,7 +20,7 @@
                     <div class="col-sm-7">
                         <div class="single-item-body border">
                             <p class="single-item-title"><h3>{{ $chitiet->ten_san_pham }}</h3></p>
-                            <p>{!! $chitiet->ghi_chu !!}</p>
+                            <p>{!! $chitiet->thuoc_tinh !!}</p>
                         </div>
                         <div class="space20">&nbsp;</div>
 
@@ -56,7 +56,7 @@
 
                   <div class="tab-content p20 pl20 pr20">
                     <div id="home" class="tab-pane fade in active">
-                      <p>{!! $chitiet->ghi_chu !!}</p>
+                      <p>{!! $chitiet->mo_ta !!}</p>
                     </div>
                     <div id="menu1" class="tab-pane fade">
                       <p>AloBee Healthy Food Việt Nam xin kính chào quý khách.</p>

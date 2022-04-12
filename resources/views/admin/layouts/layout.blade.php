@@ -72,7 +72,7 @@
                             </li>
                         @endif
                             <li>
-                                <a href="{{ route('admin.slide.index') }}"><i class="fa fa-sliders"></i></i> Quản lý slide</a>
+                                <a href="{{ route('admin.lienhe.index') }}"><i class="fa fa-sliders"></i></i> Quản lý liên hệ</a>
                             </li>
                         @if(Auth::user()->role ==1)
                             <li>

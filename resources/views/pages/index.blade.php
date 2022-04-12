@@ -53,6 +53,8 @@
         <div class="main-content">
             <div class="row">
                 <div class="col-sm-12">
+                    @if (count($tops)==0)
+                    @else
                     <div class="beta-products-list">
                         <div class="single-title"><h4>SẢN PHẨM NỔI BẬT</h4></div>
                         <div class="space30">&nbsp;</div>
@@ -82,6 +84,7 @@
                         </div>
                         <div class="paginate">{{ $tops->links() }}</div>
                     </div> <!-- .beta-products-list -->
+                    @endif
                     <div class="beta-products-list">
                         <div class="single-title"><h4>TẤT CẢ SẢN PHẨM</h4></div>
                         <div class="space30">&nbsp;</div>

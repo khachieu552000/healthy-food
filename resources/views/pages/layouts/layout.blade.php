@@ -99,5 +99,11 @@
         }
     </script>
 
+    <script type="text/javascript">
+        $(".alert").fadeTo(4500, 800).slideUp(800, function() {
+            $(".alert").slideUp(800);
+        });
+    </script>
+
 </body>
 </html>

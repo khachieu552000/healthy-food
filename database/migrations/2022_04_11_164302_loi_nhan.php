@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Slide extends Migration
+class LoiNhan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class Slide extends Migration
      */
     public function up()
     {
-        Schema::create('slide', function (Blueprint $table) {
+        Schema::create('loi_nhan', function( Blueprint $table){
             $table->increments('id');
-            $table->string('ten_slide');
-            $table->text('hinh_anh')->nullable();
+            $table->string('ho_ten');
+            $table->string('email');
+            $table->text('dien_thoai');
+            $table->text('noi_dung');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class Slide extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('slide');
+        Schema::dropIfExists('loi_nhan');
     }
 }

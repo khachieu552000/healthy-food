@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <a href="">
+            <a href="{{ route('admin.sanpham.index') }}">
                 <div class="panel-footer">
                     <span class="pull-left">Truy cập</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <a href="">
+            <a href="{{ route('admin.hoadon.index') }}">
                 <div class="panel-footer">
                     <span class="pull-left">Truy cập</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <a href="">
+            <a href="{{ route('admin.khachhang.index') }}">
                 <div class="panel-footer">
                     <span class="pull-left">Truy cập</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -103,7 +103,7 @@
             </a>
         </div>
     </div>
-    {{-- @if(Auth::user()->role == 1) --}}
+    @if(Auth::user()->role == 1)
     <div class="col-lg-3 col-md-6">
         <div class="panel panel-green">
             <div class="panel-heading">
@@ -117,7 +117,7 @@
                     </div>
                 </div>
             </div>
-            <a href="">
+            <a href="{{ route('admin.nhanvien.index') }}">
                 <div class="panel-footer">
                     <span class="pull-left">Truy cập</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -127,6 +127,7 @@
             </a>
         </div>
     </div>
+    @endif
 
     <div class="col-lg-3 col-md-6">
         <div class="panel panel-green">
@@ -136,12 +137,12 @@
                         <i class="fa fa-sliders fa-5x"></i></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge" style="font-size: 25px">Quản lý slide</div>
+                        <div class="huge" style="font-size: 25px">Quản lý liên hệ</div>
                         <div></div>
                     </div>
                 </div>
             </div>
-            <a href="">
+            <a href="{{ route('admin.lienhe.index') }}">
                 <div class="panel-footer">
                     <span class="pull-left">Truy cập</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -152,6 +153,7 @@
         </div>
     </div>
 
+    @if (Auth::user()->role ==1 )
     <div class="col-lg-3 col-md-6">
         <div class="panel panel-green">
             <div class="panel-heading">
@@ -165,7 +167,7 @@
                     </div>
                 </div>
             </div>
-            <a href="">
+            <a href="{{ route('admin.thongke.index') }}">
                 <div class="panel-footer">
                     <span class="pull-left">Truy cập</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -175,5 +177,6 @@
             </a>
         </div>
     </div>
+    @endif
 </div>
 @endsection

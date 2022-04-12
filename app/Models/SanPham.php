@@ -15,10 +15,10 @@ class SanPham extends Model
         'slug',
         'so_luong',
         'da_ban',
-        'don_gia_nhap',
         'don_gia_ban',
         'hinh_anh',
-        'ghi_chu',
+        'thuoc_tinh',
+        'mo_ta',
     ];
     public function danh_muc(){
         return $this->belongsTo(DanhMuc::class,'danh_muc_id');

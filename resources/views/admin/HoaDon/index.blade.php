@@ -13,9 +13,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Danh sách hoá đơn
-                </div>
+                <div class="panel-heading"> Danh sách hoá đơn</div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -33,14 +31,14 @@
                             </thead>
                             <tbody>
                                 @if (isset($hoadon))
-                                @php
-                                    $i = 1;
-                                @endphp
-                                @foreach($hoadon as $hd)
+                                    @php
+                                        $i = 1;
+                                    @endphp
+                                    @foreach($hoadon as $hd)
                                             <tr class="odd gradeX">
-                                                <td class="" style="width: 80px; text-align: center;">{{ $i++ }}
+                                                <td>{{ $i++ }}
                                                 </td>
-                                                <td style="text-align: center; color: red"><b>MHD{{ $hd->id }}</b></td>
+                                                <td><b>MHD{{ $hd->id }}</b></td>
                                                 <td>{{ $hd->khach_hang->ho_ten }}</td>
                                                 <td>{{ number_format($hd->tong_tien) }} VND</td>
                                                 <td>{{ date('d-m-Y', strtotime($hd->ngay_lap)) }}</td>
@@ -71,7 +69,7 @@
                                                     ​><i class="fa fa-edit"></i> Xem chi tiết</a>
                                                 </td>
                                             </tr>
-                                @endforeach
+                                    @endforeach
                                 @endif
                             </tbody>
                         </table>

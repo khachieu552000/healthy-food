@@ -21,10 +21,10 @@ class SanPham extends Migration
             $table->string('slug');
             $table->bigInteger('so_luong')->default(0);
             $table->bigInteger('da_ban')->default(0);
-            $table->double('don_gia_nhap')->default(0);
             $table->double('don_gia_ban')->default(0);
             $table->text('hinh_anh')->nullable();
-            $table->text('ghi_chu')->nullable();
+            $table->text('thuoc_tinh')->nullable();
+            $table->text('mo_ta')->nullable();
             $table->timestamps();
         });
     }

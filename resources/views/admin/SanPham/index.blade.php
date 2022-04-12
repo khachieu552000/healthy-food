@@ -47,8 +47,9 @@
                                     <th>Tên sản phẩm</th>
                                     <th>Hình ảnh</th>
                                     <th>Số lượng</th>
-                                    <th>Đơn giá nhập</th>
-                                    <th>Đơn giá bán</th>
+                                    <th>Giá bán</th>
+                                    <th>Thuộc tính</th>
+                                    <th>Mô tả</th>
                                     <th>Chức năng</th>
                             </thead>
                             <tbody>
@@ -58,18 +59,15 @@
                                 @endphp
                                 @foreach ($sanpham as $sp)
                                         <tr class="odd gradeX">
-                                            <td class="" style="width: 80px; text-align: center;">{{ $i++ }}
-                                            </td>
-                                            <td class="" style="font-weight: 600; color: rgb(231, 38, 38)">
-                                            {{ $sp->danh_muc?$sp->danh_muc->ten_danh_muc:'' }}</td>
-                                            <td class="" style="width: 80px; text-align: center;">{{ $sp->ten_san_pham }}
-                                            </td>
-                                            <td class="" style="">
-                                                <img src="{{ asset($sp->hinh_anh) }}" alt="" srcset="" width="220px" height="150px"></td>
-                                            <td class="" style="">{{ $sp->so_luong }}</td>
-                                            <td class="" style="">{{ number_format($sp->don_gia_nhap) }} VNĐ</td>
-                                            <td class="" style="">{{ number_format($sp->don_gia_ban) }} VNĐ</td>
-                                            <td class="center" style="text-align: center;">
+                                            <td>{{ $i++ }}</td>
+                                            <td>{{ $sp->danh_muc?$sp->danh_muc->ten_danh_muc:'' }}</td>
+                                            <td>{{ $sp->ten_san_pham }}</td>
+                                            <td><img src="{{ asset($sp->hinh_anh) }}" alt="" width="220px" height="150px"></td>
+                                            <td>{{ $sp->so_luong }}</td>
+                                            <td>{{ number_format($sp->don_gia_ban) }} VNĐ</td>
+                                            <td>{!! $sp->thuoc_tinh !!}</td>
+                                            <td>{!! $sp->mo_ta !!}</td>
+                                            <td>
                                                 <a class="btn btn-success btn-xs btn-edit"
                                                     href="{{ route('admin.sanpham.getSua', ['id'=>$sp->id]) }}"><i class="fa fa-edit"></i> Sửa</a>
                                                 <a class="btn btn-danger btn-xs"

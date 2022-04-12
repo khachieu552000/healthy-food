@@ -23,7 +23,6 @@ class SanPhamController extends Controller
             'ten_san_pham' => 'required|unique:san_pham,ten_san_pham',
             'danh_muc' => 'required',
             'so_luong' => 'required|numeric|min:1',
-            'don_gia_nhap' => 'required|numeric|min:0',
             'don_gia_ban' => 'required|numeric|min:0',
             'hinh_anh' => 'image',
         ],[
@@ -33,9 +32,6 @@ class SanPhamController extends Controller
             'so_luong.required' => 'Bạn chưa nhập số lượng',
             'so_luong.numeric' => 'Bạn phải nhập số !',
             'so_luong.min' => 'Số lượng phải lớn hơn 1',
-            'don_gia_nhap.requqired' => 'Bạn chưa nhập giá',
-            'don_gia_nhap.min' => 'Bạn phải nhập số !',
-            'don_gia_nhap.min' => 'Giá nhập phải lớn hơn 0',
             'don_gia_ban.requqired' => 'Bạn chưa nhập giá bán',
             'don_gia_ban.min' => 'Bạn phải nhập số !',
             'don_gia_ban.min' => 'Giá bán phải lớn hơn 0',
@@ -46,9 +42,9 @@ class SanPhamController extends Controller
             $sanpham->ten_san_pham = $request->ten_san_pham;
             $sanpham->slug = \Str::slug($request->ten_san_pham);
             $sanpham->so_luong = $request->so_luong;
-            $sanpham->don_gia_nhap = $request->don_gia_nhap;
             $sanpham->don_gia_ban = $request->don_gia_ban;
-            $sanpham->ghi_chu = $request->ghi_chu;
+            $sanpham->thuoc_tinh = $request->thuoc_tinh;
+            $sanpham->mo_ta = $request->mo_ta;
             if($request->hasFile('hinh_anh')){
                 $file = $request->file('hinh_anh');
                 $name = $file->getClientOriginalName();
@@ -74,7 +70,6 @@ class SanPhamController extends Controller
             'ten_san_pham' => 'required',
             'danh_muc' => 'required',
             'so_luong' => 'required|numeric|min:1',
-            'don_gia_nhap' => 'required|numeric|min:0',
             'don_gia_ban' => 'required|numeric|min:0',
             'hinh_anh' => 'image',
         ],[
@@ -83,9 +78,6 @@ class SanPhamController extends Controller
             'so_luong.required' => 'Bạn chưa nhập số lượng',
             'so_luong.numeric' => 'Bạn phải nhập số !',
             'so_luong.min' => 'Số lượng phải lớn hơn 1',
-            'don_gia_nhap.requqired' => 'Bạn chưa nhập giá',
-            'don_gia_nhap.min' => 'Bạn phải nhập số !',
-            'don_gia_nhap.min' => 'Giá nhập phải lớn hơn 0',
             'don_gia_ban.requqired' => 'Bạn chưa nhập giá bán',
             'don_gia_ban.min' => 'Bạn phải nhập số !',
             'don_gia_ban.min' => 'Giá bán phải lớn hơn 0',
@@ -95,9 +87,9 @@ class SanPhamController extends Controller
         $sanpham->ten_san_pham = $request->ten_san_pham;
         $sanpham->slug = \Str::slug($request->ten_san_pham);
         $sanpham->so_luong = $request->so_luong;
-        $sanpham->don_gia_nhap = $request->don_gia_nhap;
         $sanpham->don_gia_ban = $request->don_gia_ban;
-        $sanpham->ghi_chu = $request->ghi_chu;
+        $sanpham->thuoc_tinh = $request->thuoc_tinh;
+        $sanpham->mo_ta = $request->mo_ta;
         if ($request->hasFile('hinh_anh')) {
             $file = $request->file('hinh_anh');
             $name = $file->getClientOriginalName();

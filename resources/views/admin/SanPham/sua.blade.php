@@ -29,8 +29,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form role="form" action="" method="POST"
-                                enctype="multipart/form-data">
+                            <form role="form" action="" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div id="them">
                                     <div class="form-group">
@@ -41,7 +40,7 @@
                                             @if (isset($danhmuc))
                                                 @foreach ($danhmuc as $muc)
                                                     <option
-                                                        @if ($muc->id = $sanpham->danh_muc_id)
+                                                        @if ($muc->id == $sanpham->danh_muc_id)
                                                         selected
                                                         @endif
                                                         value="{{ $muc->id }}">{{ $muc->ten_danh_muc }}</option>
@@ -62,12 +61,6 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="don_gia_nhap">Đơn giá nhập (VNĐ)</label>
-                                        <input type="number" style="width: 30%" class="form-control" id="don_gia_nhap"
-                                            name="don_gia_nhap" placeholder="Nhập giá sản phẩm" value="{{ $sanpham->don_gia_nhap }}">
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="don_gia_ban">Đơn giá bán (VNĐ)</label>
                                         <input type="number" style="width: 30%" class="form-control" id="don_gia_ban"
                                             name="don_gia_ban" placeholder="Nhập giá sản phẩm" value="{{ $sanpham->don_gia_ban }}" >
@@ -84,8 +77,13 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="ghi_chu">Ghi chú</label>
-                                        <textarea class="form-control ckeditor" id="demo" name="ghi_chu" placeholder="" rows="5">{{ $sanpham->ghi_chu }}</textarea>
+                                        <label for="thuoc_tinh">Thuộc tính</label>
+                                        <textarea class="form-control ckeditor" id="demo" name="thuoc_tinh" rows="5">{{ $sanpham->thuoc_tinh }}</textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mo_ta">Mô tả</label>
+                                        <textarea class="form-control ckeditor" id="demo" name="mo_ta" rows="5">{{ $sanpham->mo_ta }}</textarea>
                                     </div>
                                 </div>
                                 <a type="button" href="{{ route('admin.sanpham.index') }}" class="btn btn-success" value="quay lại">Quay lại</a>
