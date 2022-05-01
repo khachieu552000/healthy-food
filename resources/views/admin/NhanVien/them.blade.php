@@ -24,26 +24,26 @@
             <form action="" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="ho_ten">Họ tên</label>
+                    <label for="ho_ten">Họ tên <span style="color: red">*</span></label>
                     <input type="text" class="form-control" id="ho_ten" placeholder="Họ và tên" name="ho_ten" autocomplete="off" />
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email <span style="color: red">*</span></label>
                     <input type="email" class="form-control" id="email" placeholder="Email" name="email" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
-                    <label for="dien_thoai">Điện thoại</label>
+                    <label for="dien_thoai">Điện thoại <span style="color: red">*</span></label>
                     <input type="text" class="form-control" id="dien_thoai" placeholder="Số điện thoại" name="dien_thoai" autocomplete="off" />
                 </div>
 
                 <div class="form-group" style="width: 40%;">
-                    <label for="ngay_sinh">Ngày sinh</label>
+                    <label for="ngay_sinh">Ngày sinh <span style="color: red">*</span></label>
                     <input type="date" class="form-control" id="ngay_sinh" name="ngay_sinh" autocomplete="off" />
                 </div>
 
                 <div class="form-group" style="width: 40%;">
-                    <label for="gioi_tinh">Giới tính</label>
+                    <label for="gioi_tinh">Giới tính <span style="color: red">*</span></label>
                     <select class="form-control" name="gioi_tinh" id="gioi_tinh">
                         <option value="Nam">Nam</option>
                         <option value="Nữ">Nữ</option>
@@ -51,22 +51,21 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="dia_chi">Địa chỉ</label>
+                    <label for="dia_chi">Địa chỉ <span style="color: red">*</span></label>
                     <input type="text" class="form-control" id="dia_chi" name="dia_chi" value=""
                         placeholder="Địa chỉ" />
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Mật khẩu</label>
+                    <label for="exampleFormControlInput1">Mật khẩu <span style="color: red">*</span></label>
                     <input type="password" class="form-control" id="password" placeholder="Mật khẩu" name="password" required autocomplete="off" />
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Xác nhận mật khẩu</label>
+                    <label for="exampleFormControlInput1">Xác nhận mật khẩu <span style="color: red">*</span></label>
                     <input type="password" class="form-control" id="confirm_password" placeholder="Xác nhận mật khẩu" name="passwordAgain" required>
                 </div>
-
-
-                <button type="submit" class="btn btn-primary mb-2">Thêm</button>
+                <a type="button" href="{{ route('admin.nhanvien.index') }}" class="btn btn-success" value="quay lại">Quay lại</a>
+                <button type="submit" class="btn btn-primary mb-2">Lưu</button>
                 <button type="reset" class="btn btn-default">Nhập lại</button>
             </form>
         </div>

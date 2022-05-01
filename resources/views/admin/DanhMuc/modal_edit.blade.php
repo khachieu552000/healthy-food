@@ -9,13 +9,13 @@
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="name-edit">Tên danh mục</label>
+                        <label for="name-edit">Tên danh mục <span style="color: red">*</span></label>
                         <input class="form-control" name="ten_danh_muc" id="name-edit">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <a type="button" class="btn btn-default" data-dismiss="modal">Huỷ</a>
-                    <input type="submit" class="btn btn-primary" value="Sửa">
+                    <input type="submit" class="btn btn-primary" value="Lưu">
                 </div>
             </form>
         </div>

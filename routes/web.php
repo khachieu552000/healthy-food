@@ -78,7 +78,7 @@ Route::prefix('nhan-vien')->group(function () {
     Route::post('them', [NhanVienController::class, 'postThem'])->name('admin.nhanvien.postThem');
     Route::get('sua/{id}', [NhanVienController::class, 'getSua'])->name('admin.nhanvien.getSua');
     Route::post('sua/{id}', [NhanVienController::class, 'postSua'])->name('admin.nhanvien.postSua');
-    Route::get('dat-mat-khau/{id}', [NhanVienController::class, 'getDatMatkhau'])->name('admin.nhanvien.getMatkhau');
+    Route::get('dat-mat-khau/{id}', [NhanVienController::class, 'getDatMatkhau'])->name('admin.nhanvien.getDatMatkhau');
     Route::get('xoa/{id}', [NhanVienController::class, 'getXoa'])->name('admin.nhanvien.getXoa');
     Route::get('thong-tin-nhan-vien', [NhanVienController::class, 'getThongtin'])->name('admin.thongtin.getThongtin');
     Route::get('doi-mat-khau', [NhanVienController::class, 'getMatkhau'])->name('admin.nhanvien.getMatkhau');

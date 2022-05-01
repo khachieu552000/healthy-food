@@ -41,7 +41,8 @@
                 <label for="confirmPassword">Xác nhận mật khẩu mới</label>
                 <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
             </div>
-              <button type="submit" class="btn btn-primary">Thay đổi</button>
+            <a type="button" href="{{ route('admin.thongtin.getThongtin') }}" class="btn btn-success" value="quay lại">Quay lại</a>
+              <button type="submit" class="btn btn-primary">Lưu</button>
           </form>
     </div>
 </div>

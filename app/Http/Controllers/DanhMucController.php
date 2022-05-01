@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DanhMuc;
+use App\Models\SanPham;
 
 class DanhMucController extends Controller
 {
@@ -47,6 +48,11 @@ class DanhMucController extends Controller
     }
 
     public function getXoa($id){
+        $sanpham = SanPham::where('danh_muc_id',$id)->get();
+        // dd($sanpham);
+        foreach($sanpham as $sp){
+            $sp->delete();
+        }
         DanhMuc::destroy($id);
         return redirect()->back()->with('thongbao','Xoá thành công!');
     }

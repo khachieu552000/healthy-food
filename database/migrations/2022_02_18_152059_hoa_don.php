@@ -15,7 +15,7 @@ class HoaDon extends Migration
     {
         Schema::create('hoa_don', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('nhan_vien_id')->unsigned();
+            $table->integer('nhan_vien_id')->unsigned()->nullable();
             $table->foreign('nhan_vien_id')->references('id')->on('nhan_vien');
             $table->integer('khach_hang_id')->unsigned();
             $table->foreign('khach_hang_id')->references('id')->on('khach_hang');

@@ -136,6 +136,34 @@
             $(".alert").slideUp(800);
         });
     </script>
+
+    <script>
+        $('#table').DataTable({
+    language: {
+        processing: "Message khi đang tải dữ liệu",
+        search: "Tìm kiếm",
+        lengthMenu: "Hiển thị _MENU_ mục",
+        info: "Hiển thị _START_ đến _END_ trong tổng số _TOTAL_ mục",
+        infoEmpty: "Hiển thị 0 đến 0 trong tổng số 0 muc",
+        infoFiltered: "(Được lọc từ tổng số _MAX_ mục)",
+
+        loadingRecords: "",
+        zeroRecords: "Không tìm thấy kết quả",
+        emptyTable: "Không có dữ liệu",
+        paginate: {
+            first: "Trang đầu",
+            previous: "Trang trước",
+            next: "Trang sau",
+            last: "Trang cuối"
+        },
+        aria: {
+            sortAscending: ": Message khi đang sắp xếp theo column",
+            sortDescending: ": Message khi đang sắp xếp theo column",
+        }
+    },
+});
+
+    </script>
     @yield('script')
 </body>
 

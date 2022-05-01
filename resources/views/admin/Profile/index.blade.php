@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Thông tin nhân viên</h1>
+            <h1 class="page-header">Thông tin tài khoản</h1>
         </div>
     </div>
 @if (count($errors)>0)
@@ -62,7 +62,7 @@
                         placeholder="Địa chỉ" />
                 </div>
 
-                <button type="submit" class="btn btn-primary mb-2">Cập nhật</button>
+                <button type="submit" class="btn btn-primary mb-2">Lưu</button>
                 <a href="{{ route('admin.nhanvien.getMatkhau') }}" type="buton" class="btn btn-success">Đổi mật khẩu</a>
                 <button type="reset" class="btn btn-default">Nhập lại</button>
             </form>

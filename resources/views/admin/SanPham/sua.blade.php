@@ -33,10 +33,9 @@
                                 @csrf
                                 <div id="them">
                                     <div class="form-group">
-                                        <label for="danh_muc">Danh mục</label>
+                                        <label for="danh_muc">Danh mục <span style="color: red">*</span></label>
                                         <select class="form-control" style="width: 30%" name="danh_muc"
                                             id="danh_muc">
-                                            <option value="" disabled selected>---Danh mục ---</option>
                                             @if (isset($danhmuc))
                                                 @foreach ($danhmuc as $muc)
                                                     <option
@@ -49,26 +48,26 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="ten_san_pham">Tên sản phẩm</label>
+                                        <label for="ten_san_pham">Tên sản phẩm <span style="color: red">*</span></label>
                                         <input class="form-control" id="ten_san_pham" name="ten_san_pham"
                                             placeholder="Nhập tên sản phẩm..." value="{{ $sanpham->ten_san_pham }}">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="so_luong">Số lượng</label>
+                                        <label for="so_luong">Số lượng <span style="color: red">*</span></label>
                                         <input type="number" style="width: 30%" class="form-control" id="so_luong"
                                             name="so_luong" placeholder="Nhập giá sản phẩm"  value="{{ $sanpham->so_luong }}" >
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="don_gia_ban">Đơn giá bán (VNĐ)</label>
+                                        <label for="don_gia_ban">Đơn giá bán (VNĐ) <span style="color: red">*</span></label>
                                         <input type="number" style="width: 30%" class="form-control" id="don_gia_ban"
                                             name="don_gia_ban" placeholder="Nhập giá sản phẩm" value="{{ $sanpham->don_gia_ban }}" >
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group mb-3">
                                             <div class="custom-file">
-                                                <label for="hinh_anh">Hình ảnh sản phẩm</label>
+                                                <label for="hinh_anh">Hình ảnh sản phẩm <span style="color: red">*</span></label>
                                                 <input type="file" class="custom-file-input" id="hinh_anh" name="hinh_anh">
                                             </div>
                                             <span>Xem trước: </span>
@@ -87,7 +86,7 @@
                                     </div>
                                 </div>
                                 <a type="button" href="{{ route('admin.sanpham.index') }}" class="btn btn-success" value="quay lại">Quay lại</a>
-                                <input type="submit" class="btn btn-primary mb-2" value="Sửa">
+                                <input type="submit" class="btn btn-primary mb-2" value="Lưu">
                                 <input type="reset" class="btn btn-default" value="Nhập lại" id="nhap-lai">
 
                             </form>

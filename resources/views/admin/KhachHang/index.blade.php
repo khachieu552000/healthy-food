@@ -12,6 +12,13 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
+            <p>
+                <a class="btn btn-primary" href=""> <i class="fa fa-plus"></i> Thêm mới</a>
+            <p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Danh sách tài khoản khách hàng
@@ -28,6 +35,7 @@
                                     <th>Số điện thoại</th>
                                     <th>Ngày sinh</th>
                                     <th>Địa chỉ</th>
+                                    <th>Chức năng</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,6 +51,12 @@
                                                 <td>{{ $kh->dien_thoai }}</td>
                                                 <td>{{ date('d/m/Y', strtotime($kh->ngay_sinh )) }}</td>
                                                 <td>{{ $kh->dia_chi }}</td>
+                                                <td>
+                                                    <a class="btn btn-warning btn-xs"
+                                                    href="" ​><i class="fa fa-edit"></i> Sửa</a>
+                                                <a class="btn btn-danger btn-xs"
+                                                    href="" onclick="return ConfirmDelete()" ​><i class="fa fa-edit"></i> Xoá</a>
+                                                </td>
                                             </tr>
                                     @endforeach
                                 @endif

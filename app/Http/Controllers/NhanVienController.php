@@ -57,7 +57,7 @@ class NhanVienController extends Controller
         $nhanvien->dien_thoai = $request->dien_thoai;
         $nhanvien->save();
 
-        return redirect()->back()->with('thongbao', 'Thêm mới nhân viên thành công!');
+        return redirect()->route('admin.nhanvien.index')->with('thongbao', 'Thêm mới nhân viên thành công!');
     }
 
     public function getSua($id){
@@ -91,7 +91,7 @@ class NhanVienController extends Controller
             $nv->dia_chi = $request->dia_chi;
             $nv->save();
         }
-        return redirect()->back()->with('thongbao', 'Sửa thành công!');
+        return redirect()->route('admin.nhanvien.index')->with('thongbao', 'Sửa thành công!');
     }
 
     public function getDatMatkhau($id){
@@ -119,10 +119,16 @@ class NhanVienController extends Controller
     }
 
     public function postMatkhau(Request $request){
+        $this->validate($request, [
+            'password' => 'required|min:6',
+        ],[
+            'password.required' => 'Bạn chưa nhập mật khẩu mới!',
+            'password.min' => 'Mật khẩu phải có tối thiểu 6 ký tự!',
+        ]);
         $user = Auth::user();
         if (!(Hash::check($request->oldPassword, $user->password))) {
             return redirect()->back()->with('baoloi','Sai mật khẩu cũ !');
-        } else if (strcmp($request->oldPassword, $request->password)==0){
+        } else if (strcmp($request->oldPassword, $request->password)===0){
             return redirect()->back()->with('baoloi', 'Mật khẩu mới trùng mật khẩu cũ!');
         }
         $user->password = bcrypt($request->password);

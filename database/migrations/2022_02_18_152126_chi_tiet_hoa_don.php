@@ -21,7 +21,7 @@ class ChiTietHoaDon extends Migration
             $table->foreign('san_pham_id')->references('id')->on('san_pham');
             $table->bigInteger('so_luong');
             $table->double('don_gia');
-            $table->double('giam_gia');
+            $table->double('giam_gia')->default(0);
             $table->double('thanh_tien');
             $table->timestamps();
         });

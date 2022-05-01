@@ -16,7 +16,7 @@
     <link href="{{ asset('front-end/admin/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body style="background-color: #fff">
 
     <div class="container">
         <div class="row">
