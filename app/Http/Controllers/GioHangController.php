@@ -8,12 +8,35 @@ use App\Models\HoaDon;
 use App\Models\KhachHang;
 use App\Models\SanPham;
 use Carbon\Carbon;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Stmt\TryCatch;
 
 class GioHangController extends Controller
 {
     public function getGiohang(){
+        // $cartId = Session('Carts');
+        // foreach($cartId as $key => $value){
+        //     foreach($value as $key=>$val){
+        //     // dd($val['so_luong']);
+        //     if($val['so_luong'] <= $sanpham->so_luong){
+        //     }
+        //     }
+        // }
+        // dd($car);
+        // $carts = Session('Carts');
+        // dd($carts);
+        // dd(Session('Carts')->sanpham[5]['so_luong']);
+
+    //     foreach($carts as $key => $value){
+    //         foreach($value as $key=>$val){
+    //         // $count = count($value);
+    //         $count = count($val);
+    //         dd($count);
+    //         }
+    // }
+    // dd($count);
         return view('pages.giohang');
     }
 
@@ -23,10 +46,8 @@ class GioHangController extends Controller
             $oldCart = Session('Carts') ? Session('Carts') : null;
             $newCart = new Carts($oldCart);
             $newCart->addCart($sanpham, $id);
-
             $request->session()->put('Carts', $newCart);
         }
-        // dd($newCart);
         view('pages.giohang', compact('newCart'));
         return redirect()->back();
     }
@@ -89,6 +110,7 @@ class GioHangController extends Controller
             $sanpham->da_ban += $value['so_luong'];
             $sanpham->save();
         }
+
         $request->Session()->forget('Carts');
         return redirect()->route('pages.thongbao');
     }

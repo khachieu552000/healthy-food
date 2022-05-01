@@ -7,6 +7,7 @@ use App\Models\HoaDon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\SanPham;
 
 class TaiKhoanController extends Controller
 {
@@ -65,8 +66,14 @@ class TaiKhoanController extends Controller
 
     public function getHuy($id){
         $hd = HoaDon::find($id);
-        $hd->status = -2;
+        $hd->status = -1;
         $hd->update();
+        // if($hd->status === -1){
+        //     $sp = SanPham::find($id);
+        //     $sp->so_luong += $value['so_luong'];
+        //     $sp->da_ban -= $value['so_luong'];
+        //     $sp->save();
+        // }
         return redirect()->back();
     }
 }

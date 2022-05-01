@@ -52,10 +52,17 @@
                                             <span>{{ number_format($sp->don_gia_ban) }} VNĐ</span>
                                         </p>
                                     </div>
+                                    @if ($sp->so_luong > 0)
                                     <div class="single-item-caption">
                                         <a class="beta-btn primary" onclick="addCart({{ $sp->id }})" data-id="{{ $sp->id }}">Thêm vào giỏ hàng</a>
                                         <div class="clearfix"></div>
                                     </div>
+                                    @else
+                                    <div class="single-item-caption">
+                                        <a class="beta-btn primary" style="pointer-events: none; border-color: #ffffff; background-color: #6bada8" onclick="addCart({{ $sp->id }})" data-id="{{ $sp->id }}">Thêm vào giỏ hàng</a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
                             @endforeach

@@ -72,10 +72,17 @@
                                             <span>Giá: {{ number_format($top->don_gia_ban) }} VNĐ</span>
                                         </p>
                                     </div>
+                                    @if ($top->so_luong > 0)
                                     <div class="single-item-caption">
                                         <a class="beta-btn primary" onclick="addCart({{ $top->id }})" data-id="{{ $top->id }}">Thêm giỏ hàng</a>
                                         <div class="clearfix"></div>
                                     </div>
+                                    @else
+                                    <div class="single-item-caption">
+                                        <a class="beta-btn primary" style="pointer-events: none; border-color: #ffffff; background-color: #6bada8" onclick="addCart({{ $top->id }})" data-id="{{ $top->id }}">Thêm giỏ hàng</a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
 
@@ -102,11 +109,17 @@
                                             <span>Giá: {{ number_format($all->don_gia_ban) }} VNĐ</span>
                                         </p>
                                     </div>
-
+                                    @if ($all->so_luong >0)
                                     <div class="single-item-caption">
                                         <a class="beta-btn primary" onclick="addCart({{ $all->id }})" data-id="{{ $all->id }}">Thêm giỏ hàng</a>
                                         <div class="clearfix"></div>
                                     </div>
+                                    @else
+                                    <div class="single-item-caption">
+                                        <a class="beta-btn primary" style="pointer-events: none; border-color: #ffffff; background-color: #6bada8" onclick="addCart({{ $all->id }})" data-id="{{ $all->id }}">Thêm giỏ hàng</a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
                             @endforeach

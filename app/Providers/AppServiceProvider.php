@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Composer;
 use App\Models\DanhMuc;
+use App\Models\Carts;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,5 +32,22 @@ class AppServiceProvider extends ServiceProvider
             $danhmuc = DanhMuc::all();
             $view->with('danhmuc',$danhmuc);
         });
+        view()->Composer('pages.layouts.header', function($view){
+            $carts = Session('Carts');
+        //     foreach($carts as $key => $value){
+        //         foreach($value as $key=>$val){
+        //         $count = count($val);
+        //         }
+        // }
+        if($carts != Null){
+        $count = count($carts->sanpham);
+        }
+        else{
+            $count = 0;
+        }
+            $view->with('count',$count);
+        });
+
+
     }
 }

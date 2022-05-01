@@ -17,6 +17,7 @@
             <table class="shop_table beta-shopping-cart-table" cellspacing="0">
                 <thead>
                     <tr>
+                        <th style="width: 10px">STT</th>
                         <th class="product-name">Sản phẩm</th>
                         <th class="product-price">Hình ảnh</th>
                         <th class="product-status">Giá</th>
@@ -26,8 +27,12 @@
                 </thead>
                 <tbody>
                     @if (Session::has('Carts') != null && Session::get('Carts')->sanpham)
+                    @php
+                        $s = 1;
+                    @endphp
                     @foreach (Session::get('Carts')->sanpham as $item)
                     <tr class="cart_item">
+                        <td>{{ $s++ }}</td>
                         <td class="product-name">{{ $item['sanphamInfo']->ten_san_pham }}</td>
                         <td class="product-image">
                             <img src="{{ asset($item['sanphamInfo']->hinh_anh) }}" alt="" width="170px" height="150px">
@@ -53,7 +58,9 @@
 
                     @endforeach
                     @else
-                    <tr><td style="font-size: 20px">Bạn chưa có sản phẩm nào trong giỏ hàng</td></tr>
+                    <tr>
+                        <td></td>
+                        <td style="font-size: 20px">Bạn chưa có sản phẩm nào trong giỏ hàng</td></tr>
                     @endif
                 </tbody>
 
@@ -81,7 +88,7 @@
                     0
                     @endif
                 </span></div>
-                <div class="cart-totals-row"><a class="btn btn-success" href="{{ route('pages.getThanhtoan') }}" style="margin: 4px 80px">Thanh toán</a></div>
+                <div class="cart-totals-row"><a class="btn btn-success" href="{{ route('pages.getThanhtoan') }}" style="margin: 4px 80px">Đặt hàng</a></div>
             </div>
 
             <div class="clearfix"></div>

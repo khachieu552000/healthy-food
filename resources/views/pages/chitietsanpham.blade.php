@@ -38,12 +38,19 @@
                                 <i>Giá: {{ number_format($chitiet->don_gia_ban) }} VNĐ</i>
                             </p>
                         </div>
-
+                        @if ($chitiet->so_luong >0)
                         <div class="single-item-options">
                             <a class="beta-btn primary" onclick="addCart({{ $chitiet->id }})" data-id="{{ $chitiet->id }}">Thêm giỏ hàng</a>
                             <a class="beta-btn primary ml20" href="{{ route('pages.muangay', ['muc_slug'=>$chitiet->danh_muc->slug,'danh_muc_id'=>$chitiet->danh_muc_id,'sp_slug'=>$chitiet->slug,'id'=>$chitiet->id]) }}">Mua ngay</a>
                             <div class="clearfix"></div>
                         </div>
+                        @else
+                        <div class="single-item-options">
+                            <a class="beta-btn primary" style="pointer-events: none; border-color: #ffffff; background-color: #6bada8" onclick="addCart({{ $chitiet->id }})" data-id="{{ $chitiet->id }}">Thêm giỏ hàng</a>
+                            <a class="beta-btn primary ml20" style="pointer-events: none; border-color: #ffffff; background-color: #6bada8" href="{{ route('pages.muangay', ['muc_slug'=>$chitiet->danh_muc->slug,'danh_muc_id'=>$chitiet->danh_muc_id,'sp_slug'=>$chitiet->slug,'id'=>$chitiet->id]) }}">Mua ngay</a>
+                            <div class="clearfix"></div>
+                        </div>
+                        @endif
                 </div>
                 </div>
 
@@ -101,10 +108,17 @@
                                                 <span>Giá: {{ number_format($item->don_gia_ban) }} VNĐ</span>
                                             </p>
                                         </div>
+                                        @if ($item->so_luong > 0)
                                         <div class="single-item-caption">
                                             <a class="beta-btn primary" onclick="addCart({{ $item->id }})" data-id="{{ $item->id }}">Thêm giỏ hàng</a>
                                             <div class="clearfix"></div>
                                         </div>
+                                        @else
+                                        <div class="single-item-caption">
+                                            <a class="beta-btn primary" style="pointer-events: none; border-color: #ffffff; background-color: #6bada8" onclick="addCart({{ $item->id }})" data-id="{{ $item->id }}">Thêm giỏ hàng</a>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 @php

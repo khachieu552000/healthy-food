@@ -72,7 +72,7 @@ class SanPhamController extends Controller
             'danh_muc' => 'required',
             'so_luong' => 'required|numeric|min:1',
             'don_gia_ban' => 'required|numeric|min:0',
-            'hinh_anh' => 'required|image',
+            'hinh_anh' => 'image',
         ],[
             'ten_san_pham.required' => 'Bạn chưa nhập tên sản phẩm',
             'danh_muc.required' => 'Bạn chưa chọn danh mục',
@@ -82,7 +82,6 @@ class SanPhamController extends Controller
             'don_gia_ban.requqired' => 'Bạn chưa nhập giá bán',
             'don_gia_ban.min' => 'Bạn phải nhập số !',
             'don_gia_ban.min' => 'Giá bán phải lớn hơn 0',
-            'hinh_anh.required' => 'Bạn chưa tải hình ảnh lên',
             'hinh_anh.image' => 'Hình ảnh tải lên không đúng định dạng',
         ]);
         $sanpham->danh_muc_id = $request->danh_muc;
