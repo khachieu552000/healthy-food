@@ -109,9 +109,10 @@ Route::prefix('nguoi-dung')->group(function () {
     Route::get('xoa/{id}', [GioHangController::class, 'xoaGiohang'])->name('pages.xoaGiohang');
     Route::get('sua/{id}/{tong}', [GioHangController::class, 'suaGiohang'])->name('pages.suaGiohang');
     Route::get('mua-ngay/{id}',[GioHangController::class, 'muangay'])->name('pages.muangay');
-Route::prefix('thanh-toan')->middleware('payment')->group(function () {
+Route::prefix('thanh-toan')->group(function () {
     Route::get('/', [GioHangController::class, 'getThanhtoan'])->name('pages.getThanhtoan');
     Route::post('/', [GioHangController::class, 'postThanhtoan'])->name('pages.postThanhtoan');
+    Route::post('thong-tin-thanh-toan', [GioHangController::class, 'postThanhtoan1'])->name('pages.postThanhtoan1');
 });
     Route::get('thong-bao', [GioHangController::class, 'thongbao'])->name('pages.thongbao');
     Route::get('tim-kiem', [PagesController::class, 'timkiem'])->name('pages.timkiem');

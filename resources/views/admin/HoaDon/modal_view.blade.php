@@ -19,7 +19,7 @@
                 </p>
             <hr>
             <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover" id="table-admin">
+                <table class="table table-bordered table-hover" id="table">
                     <thead>
                         <tr>
                             <th>STT</th>
