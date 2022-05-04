@@ -70,8 +70,8 @@
 
 
         <!-- Cart Collaterals -->
+        @if (Session::has('Carts') != null)
         <div class="cart-collaterals">
-
             <div class="cart-totals pull-right">
                 <div class="cart-totals-row"><h5 class="cart-total-title">Thanh toán</h5></div>
                 <div class="cart-totals-row"><span>Tổng số lượng: </span> <span>
@@ -93,6 +93,7 @@
 
             <div class="clearfix"></div>
         </div>
+        @endif
         <!-- End of Cart Collaterals -->
         <div class="clearfix"></div>
 

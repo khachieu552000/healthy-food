@@ -47,7 +47,5 @@ class AppServiceProvider extends ServiceProvider
         }
             $view->with('count',$count);
         });
-
-
     }
 }

@@ -36,6 +36,7 @@ class GioHangController extends Controller
     //         dd($count);
     //         }
     // }
+    // dd(Session('Carts')->sanpham);
     // dd($count);
         return view('pages.giohang');
     }

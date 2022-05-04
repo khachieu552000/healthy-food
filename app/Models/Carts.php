@@ -15,19 +15,21 @@ class Carts
     }
 
     public function addCart($sanpham, $id) {
-        $sanphamInfo = ['id' => $sanpham->id, 'danh_muc' => $sanpham->danh_muc->ten_danh_muc, 'ten_danh_muc' => $sanpham->ten_san_pham, 'don_gia_ban'=>$sanpham->don_gia_ban];
+        $sanphamInfo = ['id' => $sanpham->id, 'danh_muc' => $sanpham->danh_muc->ten_danh_muc, 'ten_danh_muc' => $sanpham->ten_san_pham, 'don_gia_ban'=>$sanpham->don_gia_ban, 'so_luong' => $sanpham->so_luong];
         $newsanpham = ['so_luong' => 0, 'don_gia_ban' => $sanpham->don_gia_ban, 'sanphamInfo' => $sanpham];
         if ($this->sanpham) {
             if (array_key_exists($id, $this->sanpham)) {
                 $newsanpham = $this->sanpham[$id];
             }
         }
+        if($newsanpham['so_luong'] < $sanpham->so_luong){
         $newsanpham['so_luong']++;
         $newsanpham['don_gia_ban'] = $newsanpham['so_luong'] * $sanpham->don_gia_ban;
         $this->sanpham[$id] = $newsanpham;
         $this->tonggia += $sanpham->don_gia_ban;
         $this->tongsoluong++;
-    }
+        }
+}
 
     public function deleteItemCart($id) {
         $this->tongsoluong -= $this->sanpham[$id]['so_luong'];
