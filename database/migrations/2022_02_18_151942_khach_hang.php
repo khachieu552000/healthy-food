@@ -15,7 +15,7 @@ class KhachHang extends Migration
     {
         Schema::create('khach_hang', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('ho_ten');
             $table->date('ngay_sinh');
