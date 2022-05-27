@@ -79,7 +79,7 @@
                             @endif
                         </div>
 
-                        <div class="text-center"><button type="submit" class="beta-btn primary">Thanh toán</button></div>
+                        <div class="text-center"><button type="submit" class="beta-btn primary">Đặt hàng</button></div>
                     </div> <!-- .your-order -->
                 </div>
             </div>
@@ -147,7 +147,7 @@
                             @endif
                         </div>
 
-                        <div class="text-center"><button type="submit" class="beta-btn primary">Thanh toán</button></div>
+                        <div class="text-center"><button type="submit" class="beta-btn primary">Đặt hàng</button></div>
                     </div> <!-- .your-order -->
                 </div>
             </div>

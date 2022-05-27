@@ -16,9 +16,9 @@ class ChiTietHoaDon extends Migration
         Schema::create('chi_tiet_hoa_don', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('hoa_don_id')->unsigned();
-            $table->foreign('hoa_don_id')->references('id')->on('hoa_don');
+            // $table->foreign('hoa_don_id')->references('id')->on('hoa_don');
             $table->integer('san_pham_id')->unsigned();
-            $table->foreign('san_pham_id')->references('id')->on('san_pham');
+            // $table->foreign('san_pham_id')->references('id')->on('san_pham');
             $table->bigInteger('so_luong');
             $table->double('don_gia');
             $table->double('giam_gia')->default(0);

@@ -49,8 +49,9 @@
                 <div class="beta-comp">
                     <div class="cart">
                         <div class="beta-select"><a href="{{ route('pages.giohang') }}"><i class="fa fa-shopping-cart"></i>
-                            Giỏ hàng (@if (Session::has('Carts')) {{ $count }} @else Trống)
-                        @endif)</a></div>
+                            Giỏ hàng (@if (Session::has('Carts')) {{ $count }} ) @else Trống )
+                        @endif
+                    </a></div>
                     </div> <!-- .cart -->
                 </div>
             </div>

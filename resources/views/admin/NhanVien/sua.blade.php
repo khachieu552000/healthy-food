@@ -25,7 +25,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="ho_ten">Họ tên <span style="color: red">*</span></label>
-                    <input type="text" class="form-control" id="ho_ten" placeholder="Họ và tên" name="ho_ten" value="{{ $user->nhan_vien->ho_ten }}" autocomplete="off" />
+                    <input type="text" class="form-control" id="ho_ten" placeholder="Họ và tên" name="ho_ten" value="{{ $user->nhan_vien->ho_ten }}" autocomplete="off"/>
                 </div>
                 <div class="form-group">
                     <label for="email">Email <span style="color: red">*</span></label>

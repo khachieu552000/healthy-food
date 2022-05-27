@@ -31,6 +31,12 @@
                         {{ session('thongbao') }}
                     </div>
                     @endif
+                    @if (session('thongbao1'))
+                    <div class="alert alert-success">
+                        <button class="close" type="button" data-dismiss="alert" aria-label="close" aria-hidden="true">&times;</button>
+                        {{ session('thongbao1') }}
+                    </div>
+                    @endif
                     <div class="space20">&nbsp;</div>
                     <div class="form-block">
                         <label for="email">Tài khoản</label>
@@ -38,7 +44,7 @@
                     </div>
                     <div class="form-block">
                         <label for="phone">Mật khẩu</label>
-                        <input class="form-control" type="password" id="password" name="password" placeholder="Mật khẩu">
+                        <input class="form-control" type="password" id="password" name="password" placeholder="Mật khẩu" required>
                         <div class="checkbox pull-right">
                             <label><input name="remember" type="checkbox" value="">Ghi nhớ đăng nhập</label>
                           </div>

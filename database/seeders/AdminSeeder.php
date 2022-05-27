@@ -21,10 +21,10 @@ class AdminSeeder extends Seeder
         ]);
         DB::table('nhan_vien')->insert([
             'user_id' => 1,
-            'ho_ten' => 'Nguyễn Khắc Hiếu',
-            'gioi_tinh' => 'Nam',
+            'ho_ten' => 'Trần Minh Phương',
+            'gioi_tinh' => 'Nữ',
             'ngay_sinh' => \Carbon\Carbon::now(),
-            'dia_chi' => 'Thanh Hoá',
+            'dia_chi' => 'Nam Định',
             'dien_thoai' => '12345678',
         ]);
     }

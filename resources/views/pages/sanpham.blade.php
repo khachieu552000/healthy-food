@@ -39,6 +39,7 @@
                     <div class="beta-products-list">
                         <h4>{{ $danhmuc->ten_danh_muc}}</h4>
 
+                        @if(isset($sanpham[0]))
                         <div class="row">
                             @foreach ($sanpham as $sp)
                             <div class="col-sm-4">
@@ -47,7 +48,7 @@
                                         <a href="{{ route('pages.chitietsanpham',['muc_slug'=>$sp->danh_muc->slug,'danh_muc_id'=>$sp->danh_muc_id,'sp_slug'=>$sp->slug,'id_sp'=> $sp->id]) }}"><img src="{{ asset($sp->hinh_anh) }}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <a href="{{ route('pages.chitietsanpham',['muc_slug'=>$sp->danh_muc->slug,'danh_muc_id'=>$sp->danh_muc_id,'sp_slug'=>$sp->slug,'slug'=>$sp->slug,'id_sp'=> $sp->id]) }}" class="single-item-title">{{ $sp->ten_san_pham }}</a>
+                                        <a href="{{ route('pages.chitietsanpham',['muc_slug'=>$sp->danh_muc->slug,'danh_muc_id'=>$sp->danh_muc_id,'sp_slug'=>$sp->slug,'slug'=>$sp->slug,'id_sp'=> $sp->id]) }}" class="single-item-title"><p class="productss">{{ $sp->ten_san_pham }}</p></a>
                                         <p class="single-item-price">
                                             <span>{{ number_format($sp->don_gia_ban) }} VNĐ</span>
                                         </p>
@@ -67,6 +68,9 @@
                             </div>
                             @endforeach
                         </div>
+                        @else
+                        <div><h6>Không có sản phẩm nào</h6></div>
+                        @endif
                         <div class="paginate">{{ $sanpham->links() }}</div>
                     </div> <!-- .beta-products-list -->
                     <div class="space50">&nbsp;</div>

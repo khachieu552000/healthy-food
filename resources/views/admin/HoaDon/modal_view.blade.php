@@ -23,7 +23,7 @@
                     <thead>
                         <tr>
                             <th>STT</th>
-                            <th>Tên thuốc</th>
+                            <th>Sản phẩm</th>
                             <th>Số lượng</th>
                             <th>Đơn giá</th>
                             <th>Thành tiền</th>

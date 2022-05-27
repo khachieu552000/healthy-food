@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DanhMuc;
-use App\Models\LienHe;
+use App\Models\LoiNhan;
 use App\Models\SanPham;
 use Illuminate\Http\Request;
 
@@ -19,6 +19,7 @@ class PagesController extends Controller
         $sanpham = SanPham::where('danh_muc_id',$id_muc)->paginate(16);
         $danhmuc = DanhMuc::where('id', $id_muc)->first();
         $menu = DanhMuc::all();
+        // dd($sanpham);
         return view('pages.sanpham', compact('sanpham','danhmuc','menu'));
     }
 
@@ -31,6 +32,7 @@ class PagesController extends Controller
         $menu = DanhMuc::all();
         $sanpham = SanPham::where('ten_san_pham','like','%'.$request->keyname.'%')
         ->orwhere('don_gia_ban',$request->keyname)->get();
+        // dd($sanpham[0]);
         return view('pages.timkiem', compact('sanpham','menu'));
     }
 
@@ -52,7 +54,7 @@ class PagesController extends Controller
             'noi_dung.required' => ' Bạn chưa nhập nội dung',
         ]);
 
-        $tt = new LienHe();
+        $tt = new LoiNhan();
         $tt->ho_ten = $request->ho_ten;
         $tt->email = $request->email;
         $tt->dien_thoai = $request->dien_thoai;

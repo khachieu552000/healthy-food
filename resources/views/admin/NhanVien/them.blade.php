@@ -25,26 +25,26 @@
                 @csrf
                 <div class="form-group">
                     <label for="ho_ten">Họ tên <span style="color: red">*</span></label>
-                    <input type="text" class="form-control" id="ho_ten" placeholder="Họ và tên" name="ho_ten" autocomplete="off" />
+                    <input type="text" class="form-control" id="ho_ten" placeholder="Họ và tên" name="ho_ten" autocomplete="off" value="{{ old('ho_ten') }}"/>
                 </div>
                 <div class="form-group">
                     <label for="email">Email <span style="color: red">*</span></label>
-                    <input type="email" class="form-control" id="email" placeholder="Email" name="email" autocomplete="off" />
+                    <input type="email" class="form-control" id="email" placeholder="Email" name="email" autocomplete="off" value="{{ old('email') }}"/>
                 </div>
 
                 <div class="form-group">
                     <label for="dien_thoai">Điện thoại <span style="color: red">*</span></label>
-                    <input type="text" class="form-control" id="dien_thoai" placeholder="Số điện thoại" name="dien_thoai" autocomplete="off" />
+                    <input type="text" class="form-control" id="dien_thoai" placeholder="Số điện thoại" name="dien_thoai" autocomplete="off" value="{{ old('dien_thoai') }}"/>
                 </div>
 
                 <div class="form-group" style="width: 40%;">
                     <label for="ngay_sinh">Ngày sinh <span style="color: red">*</span></label>
-                    <input type="date" class="form-control" id="ngay_sinh" name="ngay_sinh" autocomplete="off" />
+                    <input type="date" class="form-control" id="ngay_sinh" name="ngay_sinh" autocomplete="off" value="{{ old('ngay_sinh') }}"/>
                 </div>
 
                 <div class="form-group" style="width: 40%;">
                     <label for="gioi_tinh">Giới tính <span style="color: red">*</span></label>
-                    <select class="form-control" name="gioi_tinh" id="gioi_tinh">
+                    <select class="form-control" name="gioi_tinh" id="gioi_tinh" require>
                         <option value="Nam">Nam</option>
                         <option value="Nữ">Nữ</option>
                     </select>
@@ -52,13 +52,13 @@
 
                 <div class="form-group">
                     <label for="dia_chi">Địa chỉ <span style="color: red">*</span></label>
-                    <input type="text" class="form-control" id="dia_chi" name="dia_chi" value=""
-                        placeholder="Địa chỉ" />
+                    <input type="text" class="form-control" id="dia_chi" name="dia_chi" value="{{ old('dia_chi') }}"
+                        placeholder="Địa chỉ" require/>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Mật khẩu <span style="color: red">*</span></label>
-                    <input type="password" class="form-control" id="password" placeholder="Mật khẩu" name="password" required autocomplete="off" />
+                    <input type="password" class="form-control" id="password" placeholder="Mật khẩu" name="password" required autocomplete="off" require/>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Xác nhận mật khẩu <span style="color: red">*</span></label>
@@ -70,25 +70,5 @@
             </form>
         </div>
     </div>
-
-@endsection
-
-@section('script')
-<script type="text/javascript">
-        var password = document.getElementById("password"),
-            confirm_password = document.getElementById("confirm_password");
-
-        function validatePassword() {
-            if (password.value != confirm_password.value) {
-                confirm_password.setCustomValidity("Xác nhận mật khẩu không đúng!");
-            } else {
-                confirm_password.setCustomValidity('');
-            }
-        }
-
-        password.onchange = validatePassword;
-        confirm_password.onkeyup = validatePassword;
-
-    </script>
 
 @endsection

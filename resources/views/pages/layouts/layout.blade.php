@@ -35,6 +35,7 @@
 	{{-- <script src="{{ asset('front-end/assets/dest/js/waypoints.min.js') }}"></script>
 	<script src="{{ asset('front-end/assets/dest/js/wow.min.js') }}"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/siiimple-toast/dist/siiimple-toast.min.js"></script>
+    @yield('script')
 	<script>
 	$(document).ready(function($) {
 		$(window).scroll(function(){

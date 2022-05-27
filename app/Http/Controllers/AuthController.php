@@ -56,6 +56,7 @@ class AuthController extends Controller
             'ngay_sinh' => 'required',
             'dia_chi' => 'required',
             'dien_thoai' => 'required',
+            'passwordAgain' => 'required|same:password',
         ],[
             'email.required'=>'Bạn chưa nhập email',
             'email.unique'=>'Địa chỉ email đã tồn tại',
@@ -63,6 +64,8 @@ class AuthController extends Controller
             'ho_ten.required'=>'Bạn chưa nhập tên',
             'ngay_sinh.required'=>'Bạn chưa nhập địa chỉ',
             'dien_thoai.required'=>'Bạn chưa nhậP số điện thoại',
+            'passwordAgain.required' => 'Bạn chưa nhập xác nhận mật khẩu',
+            'passwordAgain.same' => 'Mật khẩu xác nhận không chính xác',
         ]);
         $user = new User();
         $user->role = 5;
@@ -77,7 +80,7 @@ class AuthController extends Controller
         $khachhang->dia_chi = $request->dia_chi;
         $khachhang->dien_thoai = $request->dien_thoai;
         $khachhang->save();
-        return redirect()->back()->with('thongbao', 'Đăng ký tài khoản thành công! Mời bạn đăng nhập vào hệ thống');
+        return redirect()->route('pages.dangnhap')->with('thongbao1', 'Đăng ký tài khoản thành công');
     }
 
     public function getUserLogin(){

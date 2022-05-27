@@ -103,7 +103,7 @@
                                             <a href="{{ route('pages.chitietsanpham', ['muc_slug'=>$item->danh_muc->slug,'danh_muc_id'=>$item->danh_muc_id,'sp_slug'=>$item->slug,'id_sp'=>$item->id]) }}"><img src="{{ asset($item->hinh_anh) }}" alt=""></a>
                                         </div>
                                         <div class="single-item-body">
-                                            <a href="{{ route('pages.chitietsanpham', ['muc_slug'=>$item->danh_muc->slug,'danh_muc_id'=>$item->danh_muc_id,'sp_slug'=>$item->slug,'id_sp'=>$item->id]) }}" class="single-item-title">{{ $item->ten_san_pham }}</a>
+                                            <a href="{{ route('pages.chitietsanpham', ['muc_slug'=>$item->danh_muc->slug,'danh_muc_id'=>$item->danh_muc_id,'sp_slug'=>$item->slug,'id_sp'=>$item->id]) }}" class="single-item-title"><p class="productss">{{ $item->ten_san_pham }}</p></a>
                                             <p class="single-item-price">
                                                 <span>Giá: {{ number_format($item->don_gia_ban) }} VNĐ</span>
                                             </p>

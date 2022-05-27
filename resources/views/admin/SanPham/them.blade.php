@@ -35,7 +35,7 @@
                                     <div class="form-group">
                                         <label for="danh_muc">Danh mục <span style="color: red">*</span></label>
                                         <select class="form-control" style="width: 30%" name="danh_muc"
-                                            id="danh_muc">
+                                            id="danh_muc" require>
                                             <option value="" disabled selected>--- Danh mục ---</option>
                                             @if (isset($danhmuc))
                                                 @foreach ($danhmuc as $muc)
@@ -48,26 +48,26 @@
                                     <div class="form-group">
                                         <label for="ten_san_pham">Tên sản phẩm <span style="color: red">*</span></label>
                                         <input class="form-control" id="ten_san_pham" name="ten_san_pham"
-                                            placeholder="Nhập tên sản phẩm...">
+                                            placeholder="Nhập tên sản phẩm..." value="{{ old('ten_san_pham') }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="so_luong">Số lượng <span style="color: red">*</span></label>
                                         <input type="number" style="width: 30%" class="form-control" id="so_luong"
-                                            name="so_luong" placeholder="Nhập giá sản phẩm" value="0">
+                                            name="so_luong" placeholder="Nhập giá sản phẩm" value="0" value="{{ old('so_luong') }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="don_gia_ban">Giá bán (VNĐ) <span style="color: red">*</span></label>
                                         <input type="number" style="width: 30%" class="form-control" id="don_gia_ban"
-                                            name="don_gia_ban" placeholder="Nhập giá sản phẩm" value="0">
+                                            name="don_gia_ban" placeholder="Nhập giá sản phẩm" value="0" value="{{ old('don_gia_ban') }}">
                                     </div>
 
                                     <div class="form-group">
                                         <div class="input-group mb-3">
                                             <div class="custom-file">
                                                 <label for="hinh_anh">Hình ảnh sản phẩm <span style="color: red">*</span></label>
-                                                <input type="file" class="custom-file-input" id="hinh_anh" name="hinh_anh">
+                                                <input type="file" class="custom-file-input" id="hinh_anh" name="hinh_anh" value="{{ old('hinh_anh') }}">
                                             </div>
                                             <span>Xem trước: </span>
                                             <img id="blah" width="150px" height="150px" src="">
@@ -76,12 +76,12 @@
 
                                     <div class="form-group">
                                         <label for="thuoc_tinh">Thuộc tính</label>
-                                        <textarea class="form-control ckeditor" id="demo" name="thuoc_tinh" rows="5"></textarea>
+                                        <textarea class="form-control ckeditor" id="demo" name="thuoc_tinh" rows="5">{{ old('thuoc_tinh') }}</textarea>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="mo_ta">Mô tả</label>
-                                        <textarea class="form-control ckeditor" id="demo" name="mo_ta" rows="5"></textarea>
+                                        <textarea class="form-control ckeditor" id="demo" name="mo_ta" rows="5">{{ old('mo_ta') }}</textarea>
                                     </div>
                                 </div>
                                 <a type="button" href="{{ route('admin.sanpham.index') }}" class="btn btn-success" value="quay lại">Quay lại</a>

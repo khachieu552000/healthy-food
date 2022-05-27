@@ -28,6 +28,7 @@ class NhanVienController extends Controller
             'ngay_sinh' => 'required',
             'gioi_tinh' => 'required',
             'dia_chi' => 'required',
+            'passwordAgain' => 'required|same:password',
         ],
         [
             "ho_ten.required" => "Hãy nhập tên!",
@@ -40,6 +41,8 @@ class NhanVienController extends Controller
             "ngay_sinh.required" => "Hãy nhập ngày sinh!",
             "gioi_tinh.required" => "Hãy chọn giới tính!",
             "dia_chi.required" => "Hãy nhập địa chỉ!",
+            'passwordAgain.required' => 'Bạn chưa nhập xác nhận mật khẩu',
+            'passwordAgain.same' => 'Mật khẩu xác nhận không chính xác',
         ]);
 
         $user = new User();
@@ -121,9 +124,12 @@ class NhanVienController extends Controller
     public function postMatkhau(Request $request){
         $this->validate($request, [
             'password' => 'required|min:6',
+            'confirmPassword' => 'required|same:password',
         ],[
             'password.required' => 'Bạn chưa nhập mật khẩu mới!',
             'password.min' => 'Mật khẩu phải có tối thiểu 6 ký tự!',
+            'confirmPassword.required' => 'Bạn chưa nhập xác nhận mật khẩu',
+            'confirmPassword.same' => 'Mật khẩu xác nhận không chính xác',
         ]);
         $user = Auth::user();
         if (!(Hash::check($request->oldPassword, $user->password))) {

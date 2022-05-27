@@ -10,7 +10,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="name-edit">Tên danh mục <span style="color: red">*</span></label>
-                        <input class="form-control" name="ten_danh_muc" id="name-edit">
+                        <input class="form-control" name="ten_danh_muc" id="name-edit" require>
                     </div>
                 </div>
                 <div class="modal-footer">

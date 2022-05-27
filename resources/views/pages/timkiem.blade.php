@@ -20,7 +20,7 @@
                             <ul id="menu-items">
                                 @foreach ($menu as $item)
                                     <li class="item-menu-product">
-                                        <a href="{{ route('pages.sanpham', ['id_muc'=>$item->id]) }}" class="nav-item">{{ $item->ten_danh_muc }}</a>
+                                        <a href="{{ route('pages.sanpham', ['slug'=>$item->slug,'id_muc'=>$item->id]) }}" class="nav-item">{{ $item->ten_danh_muc }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -37,9 +37,12 @@
                 </div>
                 <div class="col-sm-9">
                     <div class="beta-products-list">
-                        <h4>TấT cả sản phẩm</h4>
-
+                        <h4>Tất cả sản phẩm</h4>
+                        @if(empty($sanpham[0]))
+                        <div class="row"><div class="col-sm-9"><h6>Không tìm thấy sản phẩm nào phù hợp</h5></div></div>
+                        @else
                         <div class="row">
+                            @if(isset($sanpham))
                             @foreach ($sanpham as $sp)
                             <div class="col-sm-4">
                                 <div class="single-item">
@@ -47,7 +50,7 @@
                                         <a href="product.html"><img src="{{ asset($sp->hinh_anh) }}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">{{ $sp->ten_san_pham }}</p>
+                                        <p class="single-item-title productss">{{ $sp->ten_san_pham }}</p>
                                         <p class="single-item-price">
                                             <span>{{ number_format($sp->don_gia_ban) }} VNĐ</span>
                                         </p>
@@ -59,7 +62,9 @@
                                 </div>
                             </div>
                             @endforeach
+                            @endif
                         </div>
+                        @endif
                     </div> <!-- .beta-products-list -->
                     <div class="space50">&nbsp;</div>
                 </div>

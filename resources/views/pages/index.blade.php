@@ -67,7 +67,7 @@
                                         <a href="{{ route('pages.chitietsanpham', ['muc_slug'=>$top->danh_muc->slug,'danh_muc_id'=>$top->danh_muc_id,'sp_slug'=>$top->slug,'id_sp'=>$top->id]) }}"><img src="{{ asset($top->hinh_anh) }}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <a href="{{ route('pages.chitietsanpham', ['muc_slug'=>$top->danh_muc->slug,'danh_muc_id'=>$top->danh_muc_id,'sp_slug'=>$top->slug,'id_sp'=>$top->id]) }}" class="single-item-title">{{ $top->ten_san_pham }}</a>
+                                        <a href="{{ route('pages.chitietsanpham', ['muc_slug'=>$top->danh_muc->slug,'danh_muc_id'=>$top->danh_muc_id,'sp_slug'=>$top->slug,'id_sp'=>$top->id]) }}" class="single-item-title"><p class="productss">{{ $top->ten_san_pham }}</p></a>
                                         <p class="single-item-price">
                                             <span>Giá: {{ number_format($top->don_gia_ban) }} VNĐ</span>
                                         </p>
@@ -104,7 +104,7 @@
                                         <a href="{{ route('pages.chitietsanpham',['muc_slug'=>$all->danh_muc->slug,'danh_muc_id'=>$all->danh_muc_id,'sp_slug'=>$all->slug,'id_sp'=> $all->id]) }}"><img src="{{ asset($all->hinh_anh) }}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <a href="{{ route('pages.chitietsanpham',['muc_slug'=>$all->danh_muc->slug,'danh_muc_id'=>$all->danh_muc_id,'sp_slug'=>$all->slug,'id_sp'=> $all->id]) }}" class="single-item-title">{{ $all->ten_san_pham }} </a>
+                                        <a href="{{ route('pages.chitietsanpham',['muc_slug'=>$all->danh_muc->slug,'danh_muc_id'=>$all->danh_muc_id,'sp_slug'=>$all->slug,'id_sp'=> $all->id]) }}" class="single-item-title"><p class = "productss">{{ $all->ten_san_pham }}</p> </a>
                                         <p class="single-item-price">
                                             <span>Giá: {{ number_format($all->don_gia_ban) }} VNĐ</span>
                                         </p>

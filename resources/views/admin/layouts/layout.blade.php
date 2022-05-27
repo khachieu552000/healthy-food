@@ -72,7 +72,7 @@
                             </li>
                         @endif
                             <li>
-                                <a href="{{ route('admin.lienhe.index') }}"><i class="fa fa-sliders"></i></i> Quản lý liên hệ</a>
+                                <a href="{{ route('admin.lienhe.index') }}"><i class="fa fa-sliders"></i></i> Quản lý lời nhắn</a>
                             </li>
                         @if(Auth::user()->role ==1)
                             <li>
@@ -144,7 +144,7 @@
         search: "Tìm kiếm",
         lengthMenu: "Hiển thị _MENU_ mục",
         info: "Hiển thị _START_ đến _END_ trong tổng số _TOTAL_ mục",
-        infoEmpty: "Hiển thị 0 đến 0 trong tổng số 0 muc",
+        infoEmpty: "Hiển thị 0 đến 0 trong tổng số 0 mục",
         infoFiltered: "(Được lọc từ tổng số _MAX_ mục)",
 
         loadingRecords: "",

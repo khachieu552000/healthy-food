@@ -119,10 +119,10 @@ Route::prefix('thanh-toan')->group(function () {
     Route::get('lien-he', [PagesController::class, 'getLienhe'])->name('pages.lienhe');
     Route::post('lien-he', [PagesController::class, 'postLienhe'])->name('pages.postLienhe');
     Route::get('gioi-thieu', [PagesController::class, 'getGioithieu'])->name('pages.gioithieu');
-    Route::get('thong-tin', [TaiKhoanController::class, 'getThongtinUser'])->name('pages.getThongtinUser');
-    Route::post('thong-tin', [TaiKhoanController::class, 'postThongtinUser'])->name('pages.postThongtinUser');
-    Route::get('doi-mat-khau', [TaiKhoanController::class, 'getMatkhauUser'])->name('pages.getMatkhauUser');
-    Route::post('doi-mat-khau', [TaiKhoanController::class, 'postMatkhauUser'])->name('pages.postMatkhauUser');
-    Route::get('lich-su', [TaiKhoanController::class, 'getLichsu'])->name('pages.getLichsu');
-    Route::get('huy/{id}', [TaiKhoanController::class, 'getHuy'])->name('pages.getHuy');
+    Route::get('thong-tin', [TaiKhoanController::class, 'getThongtinUser'])->name('pages.getThongtinUser')->middleware('user');
+    Route::post('thong-tin', [TaiKhoanController::class, 'postThongtinUser'])->name('pages.postThongtinUser')->middleware('user');
+    Route::get('doi-mat-khau', [TaiKhoanController::class, 'getMatkhauUser'])->name('pages.getMatkhauUser')->middleware('user');
+    Route::post('doi-mat-khau', [TaiKhoanController::class, 'postMatkhauUser'])->name('pages.postMatkhauUser')->middleware('user');
+    Route::get('lich-su', [TaiKhoanController::class, 'getLichsu'])->name('pages.getLichsu')->middleware('user');
+    Route::get('huy/{id}', [TaiKhoanController::class, 'getHuy'])->name('pages.getHuy')->middleware('user');
 });

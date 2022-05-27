@@ -43,6 +43,7 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
+                                    <th>Mã sản phẩm</th>
                                     <th>Danh mục</th>
                                     <th>Tên sản phẩm</th>
                                     <th>Hình ảnh</th>
@@ -60,6 +61,7 @@
                                 @foreach ($sanpham as $sp)
                                         <tr class="odd gradeX">
                                             <td>{{ $i++ }}</td>
+                                            <td>MSP{{ $sp->id }}</td>
                                             <td>{{ $sp->danh_muc?$sp->danh_muc->ten_danh_muc:'' }}</td>
                                             <td>{{ $sp->ten_san_pham }}</td>
                                             <td><img src="{{ asset($sp->hinh_anh) }}" alt="" width="220px" height="150px"></td>

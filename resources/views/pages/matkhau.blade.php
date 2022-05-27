@@ -20,7 +20,7 @@
     <div class="alert alert-danger">
         <button class="close" type="button" data-dismiss= "alert" aria-label="close" aria-hidden="true">&times;</button>
         @foreach ($errors->all() as $err)
-        {{ $err }}
+        {{ $err }} <br>
         @endforeach
     </div>
     @endif
@@ -60,23 +60,4 @@
     </div>
 </div>
 <div class="space90">&nbsp;</div>
-@endsection
-@section('script')
-<script type="text/javascript">
-    var password = document.getElementById("password"),
-        confirm_password = document.getElementById("confirmPassword");
-
-    function validatePassword() {
-        if (password.value != confirm_password.value) {
-            confirm_password.setCustomValidity("Xác nhận mật khẩu không đúng!");
-        } else {
-            confirm_password.setCustomValidity('');
-        }
-    }
-
-    password.onchange = validatePassword;
-    confirm_password.onkeyup = validatePassword;
-
-</script>
-
 @endsection

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\SanPham;
 use App\Models\DanhMuc;
 use Illuminate\Support\Str;
+use Nette\Utils\Random;
 
 class SanPhamController extends Controller
 {

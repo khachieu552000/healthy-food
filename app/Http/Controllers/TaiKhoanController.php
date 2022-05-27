@@ -43,9 +43,12 @@ class TaiKhoanController extends Controller
     public function postMatkhauUser(Request $request){
         $this->validate($request,[
             'password'=>'required|min:6',
+            'confirmPassword' => 'required|same:password',
         ],[
             'password.required'=>'Mật khẩu không được để trống!',
             'password.min'=>'Mật khẩu phải có ít nhất 6 kí tự',
+            'confirmPassword.required' => 'Bạn chưa nhập xác nhận mật khẩu',
+            'confirmPassword.same' => 'Mật khẩu xác nhận không chính xác',
         ]);
         $user = Auth::user();
         if(!(Hash::check($request->oldPassword, $user->password))){

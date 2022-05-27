@@ -16,7 +16,7 @@ class SanPham extends Migration
         Schema::create('san_pham', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('danh_muc_id')->unsigned();
-            $table->foreign('danh_muc_id')->references('id')->on('danh_muc');
+            // $table->foreign('danh_muc_id')->references('id')->on('danh_muc');
             $table->string('ten_san_pham');
             $table->string('slug');
             $table->bigInteger('so_luong')->default(0);

@@ -137,7 +137,7 @@
                         <i class="fa fa-sliders fa-5x"></i></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge" style="font-size: 25px">Quản lý liên hệ</div>
+                        <div class="huge" style="font-size: 25px">Quản lý lời nhắn</div>
                         <div></div>
                     </div>
                 </div>
