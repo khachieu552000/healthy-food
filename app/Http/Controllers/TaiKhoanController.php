@@ -71,12 +71,20 @@ class TaiKhoanController extends Controller
         $hd = HoaDon::find($id);
         $hd->status = -1;
         $hd->update();
-        // if($hd->status === -1){
-        //     $sp = SanPham::find($id);
-        //     $sp->so_luong += $value['so_luong'];
-        //     $sp->da_ban -= $value['so_luong'];
-        //     $sp->save();
-        // }
+        $hoadonhuy = HoaDon::with('chi_tiet_hoa_don.san_pham')->find($id);
+        if ($hoadonhuy->status === -1) {
+            foreach ($hoadonhuy->chi_tiet_hoa_don as $value) {
+                //  dd($value->san_pham_id);
+                $sanpham = SanPham::where('id', $value->san_pham_id)->get();
+                // dd($sanpham);
+                foreach ($sanpham as $sp) {
+                    $sp->so_luong += $value->so_luong;
+                    $sp->da_ban -= $value->so_luong;
+                    // $sanpham->da_ban -= $value['so_luong'];
+                    $sp->save();
+                }
+            }
+        }
         return redirect()->back();
     }
 }

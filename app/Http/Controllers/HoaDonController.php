@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HoaDon;
+use App\Models\SanPham;
 use Illuminate\Http\Request;
 
 class HoaDonController extends Controller
@@ -31,10 +32,38 @@ class HoaDonController extends Controller
         if ($hoadon->status == 0 && $hoadon->khach_hang_id = \Auth::user()->khach_hang->id) {
             $hoadon->status = -1;
             $hoadon->update();
+            $hoadonhuy = HoaDon::with('chi_tiet_hoa_don.san_pham')->find($id);
+            if ($hoadonhuy->status === -1) {
+                foreach ($hoadonhuy->chi_tiet_hoa_don as $value) {
+                    //  dd($value->san_pham_id);
+                    $sanpham = SanPham::where('id', $value->san_pham_id)->get();
+                    // dd($sanpham);
+                    foreach ($sanpham as $sp) {
+                        $sp->so_luong += $value->so_luong;
+                        $sp->da_ban -= $value->so_luong;
+                        // $sanpham->da_ban -= $value['so_luong'];
+                        $sp->save();
+                    }
+                }
+            }
             return redirect()->back()->with('thongbao', 'Đơn hàng MHD'.$hoadon->id.' đã được huỷ!');
         } elseif($hoadon->status == -2){
             $hoadon->status = -1;
             $hoadon->update();
+            $hoadonhuy = HoaDon::with('chi_tiet_hoa_don.san_pham')->find($id);
+            if ($hoadonhuy->status === -1) {
+                foreach ($hoadonhuy->chi_tiet_hoa_don as $value) {
+                    //  dd($value->san_pham_id);
+                    $sanpham = SanPham::where('id', $value->san_pham_id)->get();
+                    // dd($sanpham);
+                    foreach ($sanpham as $sp) {
+                        $sp->so_luong += $value->so_luong;
+                        $sp->da_ban -= $value->so_luong;
+                        // $sanpham->da_ban -= $value['so_luong'];
+                        $sp->save();
+                    }
+                }
+            }
             return redirect()->back()->with('thongbao', 'Đơn hàng MHD'.$hoadon->id.' đã được huỷ!');
         }
     }
